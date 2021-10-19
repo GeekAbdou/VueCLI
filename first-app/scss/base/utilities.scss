@@ -1,0 +1,33 @@
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: $primary-color;
+
+  &--centered {
+    margin: 0 auto;
+  }
+}
+
+
+// utility
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
