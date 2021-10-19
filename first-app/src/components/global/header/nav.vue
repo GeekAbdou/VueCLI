@@ -9,7 +9,7 @@
 
       <nav class="header__nav">
         <router-link to="/" tag="li" exact><a>Home</a></router-link>
-        <router-link to="/Blog" tag="li"><a>Blog</a></router-link>
+        <router-link to="/Apps" tag="li"><a>Apps</a></router-link>
         <router-link to="/Features" tag="li"><a>Features</a></router-link>
         <router-link to="/About" tag="li"><a>About</a></router-link>
         <router-link to="/Help" tag="li"><a>Help</a></router-link>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "Header", 
+  name: "Header",
 };
 </script>
 
