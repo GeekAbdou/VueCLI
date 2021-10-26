@@ -28,8 +28,8 @@ export default {
     toSlug() {
       var convertedSlug = this.title;
       convertedSlug = convertedSlug.toLowerCase();
-      convertedSlug = convertedSlug.replace(/&/g , ' ');
-      convertedSlug = convertedSlug.replace(/\s+/g , '-');
+      convertedSlug = convertedSlug.replace(/&/g, " ");
+      convertedSlug = convertedSlug.replace(/\s+/g, "-");
       this.slug = convertedSlug;
     },
   },
