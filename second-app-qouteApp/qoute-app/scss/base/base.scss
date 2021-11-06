@@ -1,0 +1,28 @@
+@import 'variables';
+
+body {
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $primary-text-color;
+
+  &.lock {
+    overflow: hidden;
+  }
+
+  &.opened {
+
+    .mobile-menu-overlay {
+      display: block;
+    }
+
+    .mobile-menu {
+      right: 0;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
