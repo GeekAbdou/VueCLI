@@ -1,13 +1,16 @@
 <template>
-    <div class="container">
-    
-    </div>
+  <div class="container"></div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+  data: function () {
+    return {
+      qoutes: [],
+      maxQoutes: 10,
+    };
+  },
+};
 </script>
 
 <style>
