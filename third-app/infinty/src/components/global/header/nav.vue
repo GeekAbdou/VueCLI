@@ -47,6 +47,11 @@ export default {
   }
 
   @media (max-width: 768px) {
+    .header__nav-links {
+      a {
+        padding: 0 4px;
+      }
+    }
     .header__logo {
       margin: auto;
     }

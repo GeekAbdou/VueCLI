@@ -13,6 +13,9 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../scss/index.scss";
+import { dom } from "@fortawesome/fontawesome-svg-core";
+dom.watch();
+import "animate.css";
 
 createApp(App)
   .component("fa", FontAwesomeIcon)
