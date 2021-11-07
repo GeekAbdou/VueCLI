@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <new-qoute @createQoute="createQoute"> </new-qoute>
-    <app-qoute-grid :qoutes="qoutes"> </app-qoute-grid>
+    <app-qoute-grid :qoutes="qoutes" @deleteQoute='deleteQoute'> </app-qoute-grid>
   </div>
 </template>
 
@@ -13,7 +13,6 @@ export default {
   data: function () {
     return {
       qoutes: [],
-      maxQoutes: 10,
     };
   },
   components: {
@@ -23,6 +22,9 @@ export default {
   methods: {
       createQoute(qoute){
           this.qoutes.push(qoute);
+      },
+      deleteQoute(index){
+          this.qoutes.splice(index,1);
       }
   },
 };

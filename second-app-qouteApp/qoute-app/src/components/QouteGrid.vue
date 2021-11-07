@@ -1,17 +1,28 @@
 <template>
   <div class="row">
-    <app-qoute v-for="qoute in qoutes" :key="qoute">{{qoute}}</app-qoute>
-   </div>
+    <app-qoute
+      v-for="(qoute, index) in qoutes"
+      :key="(qoute, index)"
+      @click="deletedQoute(index)"
+      >{{ qoute }}</app-qoute
+    >
+  </div>
 </template>
 
 <script>
-  import Qoute from './SingleQoute';
+import Qoute from "./SingleQoute";
 
 export default {
-  props:['qoutes'],
-  components:{
+  props: ["qoutes"],
+  components: {
     appQoute: Qoute,
-  }
+  },
+  methods: {
+    deleteQoute(index) {
+      this.$emit("deletedQoute",index);
+
+    },
+  },
 };
 </script>
 
