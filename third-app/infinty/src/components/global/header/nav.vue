@@ -6,11 +6,22 @@
       </div>
 
       <nav class="header__nav-links">
-        <router-link to="/" tag="li" exact><a>Home</a></router-link>
-        <router-link to="/services" tag="li"><a>Services</a></router-link>
-        <router-link to="/pricing" tag="li"><a>Pricing</a></router-link>
-        <router-link to="/contact-us" tag="li"><a>Contact Us</a></router-link>
-        <router-link to="/all-links" tag="li"><a>All Links</a></router-link>
+        <ul>
+          <li>
+            <router-link to="/" tag="li" exact><a>Home</a></router-link>
+          </li>
+          <li>
+            <router-link to="/services" tag="li"><a>Services</a></router-link>
+          </li>
+          <li>
+            <router-link to="/pricing" tag="li"><a>Pricing</a> </router-link>
+          </li>
+          <li>
+            <router-link to="/contact-us" tag="li"
+              ><a>Contact Us</a></router-link
+            >
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -37,6 +48,7 @@ export default {
   box-shadow: 0 0 10px #ddd;
   position: relative;
   background: white;
+
   .header__logo {
     display: flex;
     align-items: center;
@@ -46,39 +58,29 @@ export default {
     font-weight: 800;
   }
 
-  @media (max-width: 768px) {
-    .header__nav-links {
-      a {
-        padding: 0 4px;
+  .header__nav-links ul {
+    display: flex;
+    @media (max-width: 768px) {
+      .header__nav-links {
+        a {
+          padding: 0 4px;
+        }
+      }
+      .header__logo {
+        margin: auto;
       }
     }
-    .header__logo {
-      margin: auto;
-    }
-  }
-
-  .header__nav-links {
-    margin: auto 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      overflow: hidden;
-    }
-
     a {
+      
       display: flex;
       align-items: center;
+      position: relative;
       height: 70px;
       padding: 0 10px;
       color: #333;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 400;
       font-family: "Lato", sans-serif;
-      transition: $main-trans-dur;
       overflow: hidden;
 
       @media (max-width: 768px) {
@@ -87,6 +89,7 @@ export default {
           font-weight: 400;
         }
       }
+
       &::before {
         content: "";
         position: absolute;
@@ -98,11 +101,7 @@ export default {
         transition: $main-trans-dur;
       }
 
-      &:hover {
-        color: $primary-color;
-        background-color: #fafafa;
-        overflow: hidden;
-      }
+
 
       &:hover::before {
         left: 0;

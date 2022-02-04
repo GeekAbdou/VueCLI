@@ -16,8 +16,10 @@
       <a
         class="
           landing__arrow
-          animate__animated animate__bounce animate__infinite animate__slow
-        "
+          animate__animated animate__bounce
+          animate__infinite animate__slow
+        " 
+        href="#"
       >
         <fa class="arrow" :icon="['fas', 'angle-double-down']" size="2x" />
       </a>
@@ -44,20 +46,30 @@ export default {};
     flex-direction: column;
     min-height: calc(100vh - 120px);
   }
-  .landing__text {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 60px;
-    h2 {
-      width: 100%;
+  .landing {
+    .landing__text {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 60px;
+
+      h2 {
+        width: 70%;
+        font-size: 20px;
+      }
+
+      p {
+        width: 70%;
+        font-size: 14px;
+      }
     }
-  }
-  .landing__img {
-    img {
-      width: 280px;
-      max-width: 100%;
+
+    .landing__img {
+      img {
+        width: 280px;
+        max-width: 100%;
+      }
     }
   }
 }
@@ -78,7 +90,7 @@ export default {};
   position: relative;
   .landing__text {
     h2 {
-      width: 100%;
+      width: 70%;
       font-weight: 800;
       letter-spacing: -1px;
       font-size: 40px;
@@ -88,15 +100,27 @@ export default {};
       color: #666;
       width: 70%;
       font-size: 18px;
-      line-height: 1.7;      
+      line-height: 1.7;
     }
   }
   .landing__img {
-    animation: up-and-down 5s linear infinite;
     img {
-      width: 600px;
+      width: 700px;
       max-width: 100%;
-      animation: up-and-down 5s linear infinite;
+      animation: MoveUpDown 5s linear infinite;
+      position: relative;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      top: 0;
+    }
+    50% {
+      top: -50px;
     }
   }
 
