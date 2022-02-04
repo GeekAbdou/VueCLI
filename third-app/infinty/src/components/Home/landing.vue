@@ -16,12 +16,11 @@
       <a
         class="
           landing__arrow
-          animate__animated animate__bounce
-          animate__infinite animate__slow
-        " 
+          animate__animated animate__bounce animate__infinite animate__slow
+        "
         href="#"
       >
-        <fa class="arrow" :icon="['fas', 'angle-double-down']" size="2x" />
+        <fa :icon="['fas', 'angle-double-down']" size="2x" />
       </a>
     </div>
   </section>
