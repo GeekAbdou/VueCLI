@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <Toast v-if="showToast" />
     <Todos @badValue="triggerToast" />
-    <transition name="fade"> 
+    <transition name="toast">
+      <Toast v-if="showToast" />
+    </transition>
+
+    <transition name="fade">
       <div v-if="showP">Hello from Paragraph.</div>
     </transition>
     <button @click="showP = !showP">toggle</button>
@@ -22,31 +25,54 @@ export default {
 
     const triggerToast = () => {
       showToast.value = true;
-      setTimeout(() => (showToast.value = false), 3000);
+      setTimeout(() => (showToast.value = false), 1000);
     };
 
-    return { showToast, triggerToast,showP };
+    return { showToast, triggerToast, showP };
   },
 };
 </script>
 
 <style>
-  .fade-enter-from {
-    opacity: 0;
-  }
-  .fade-enter-to {
-    opacity: 1;
-  }
-  .fade-enter-active {
-    transition: all 2s ease;
-  }
-  .fade-leave-from {
-    opacity: 1;
-  }
-  .fade-leave-to {
-    opacity: 0;
-  }
-  .fade-leave-active {
-    transition: all 1s linear;
-  }
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: all 2s ease;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: all 1s linear;
+}
+
+.toast-enter-from {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.toast-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast-enter-active {
+  transition: all 0.5s ease;
+}
+.toast-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.toast-leave-active {
+  transition: all 1s linear;
+}
 </style>
